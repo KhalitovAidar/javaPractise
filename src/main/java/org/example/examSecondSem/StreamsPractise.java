@@ -2,7 +2,9 @@ package org.example.examSecondSem;
 
 import org.example.examSecondSem.util.User;
 
+import java.lang.reflect.Field;
 import java.security.spec.RSAOtherPrimeInfo;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -19,7 +21,7 @@ public class StreamsPractise {
             new User(7, "Michael", "Tommy", 37, "ru")
     );
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchFieldException {
         StreamsPractise streamsPractise = new StreamsPractise();
 
         streamsPractise.testForEach();
@@ -36,14 +38,12 @@ public class StreamsPractise {
     private void testMap() {
         System.out.println("Test Map");
         userList.stream()
-                .map(u -> {
-                    return new User(
-                            u.getId(),
-                            "X " + u.getFirstName(),
-                            "Y " + u.getLastName(),
-                            u.getAge() + 10,
-                    u.getNationality());
-                })
+                .map(u -> new User(
+                        u.getId(),
+                        "X " + u.getFirstName(),
+                        "Y " + u.getLastName(),
+                        u.getAge() + 10,
+                u.getNationality()))
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
     }
