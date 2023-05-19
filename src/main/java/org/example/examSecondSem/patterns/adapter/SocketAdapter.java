@@ -1,6 +1,6 @@
 package org.example.examSecondSem.patterns.adapter;
 
-public class SocketAdapter implements EuroSocket{
+public class SocketAdapter implements EuroSocket {
     private AmericanSocket americanSocket;
 
     public SocketAdapter(AmericanSocket americanSocket) {

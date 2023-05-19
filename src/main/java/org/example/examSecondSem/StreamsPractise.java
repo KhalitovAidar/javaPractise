@@ -32,7 +32,16 @@ public class StreamsPractise {
     private void testForEach() {
         System.out.println("Test forEach");
 
-        userList.stream().forEach(System.out::println);
+//        () -> {
+//
+//        }
+        userList.stream().forEach((user) -> {
+            System.out.println(user);
+        });
+
+        for (User user: userList) {
+            System.out.println(user);
+        }
     }
 
     private void testMap() {
@@ -43,14 +52,18 @@ public class StreamsPractise {
                         "X " + u.getFirstName(),
                         "Y " + u.getLastName(),
                         u.getAge() + 10,
-                u.getNationality()))
+                            u.getNationality()))
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
+//        Optional<User> user = db.connect().getUser(1);
     }
 
     private void testSorted() {
         System.out.println("Test Sorted");
 
+//        (user) -> {
+//
+//        }
         userList.stream()
                 .sorted(Comparator.comparing(User::getAge))
                 .collect(Collectors.toList())
