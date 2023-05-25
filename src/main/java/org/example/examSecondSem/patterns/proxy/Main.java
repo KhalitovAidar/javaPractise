@@ -5,7 +5,6 @@ public class Main {
 
 class UserProxy {
     private User user;
-
     public UserProxy(User user) {
         this.user = user;
     }

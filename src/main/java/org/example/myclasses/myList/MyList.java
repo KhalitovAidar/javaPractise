@@ -5,137 +5,128 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class MyList<T extends Object> implements List<T> {
-    private T[] array;
+import java.util.*;
 
-    public MyList(T[] array) {
-        this.array = array;
+public class MyList<E> implements List<E> {
+    private ArrayList<E> data;
+
+    public MyList() {
+        data = new ArrayList<>();
     }
 
-    //TODO
+    // Реализация методов интерфейса List
     @Override
     public int size() {
-        return array.length;
+        return data.size();
     }
 
-    //TODO
     @Override
     public boolean isEmpty() {
-        return array.length == 0;
+        return data.isEmpty();
     }
 
     @Override
     public boolean contains(Object o) {
-        return false;
+        return data.contains(o);
     }
 
     @Override
-    public Iterator<T> iterator() {
-        return null;
+    public Iterator<E> iterator() {
+        return data.iterator();
     }
 
-    //TODO
     @Override
     public Object[] toArray() {
-        return null;
+        return data.toArray();
     }
 
-    //TODO
     @Override
-    public <T1> T1[] toArray(T1[] a) {
-        return null;
+    public <T> T[] toArray(T[] a) {
+        return data.toArray(a);
     }
 
-    //TODO
     @Override
-    public boolean add(T t) {
-//        T[] newArray = new T[array.length + 1];
-        return false;
+    public boolean add(E e) {
+        return data.add(e);
     }
 
-    //TODO
     @Override
     public boolean remove(Object o) {
-        return false;
+        return data.remove(o);
     }
 
     @Override
     public boolean containsAll(Collection<?> c) {
-        return false;
+        return data.containsAll(c);
     }
 
     @Override
-    public boolean addAll(Collection<? extends T> c) {
-        return false;
+    public boolean addAll(Collection<? extends E> c) {
+        return data.addAll(c);
     }
 
     @Override
-    public boolean addAll(int index, Collection<? extends T> c) {
-        return false;
+    public boolean addAll(int index, Collection<? extends E> c) {
+        return data.addAll(index, c);
     }
 
     @Override
     public boolean removeAll(Collection<?> c) {
-        return false;
+        return data.removeAll(c);
     }
 
     @Override
     public boolean retainAll(Collection<?> c) {
-        return false;
+        return data.retainAll(c);
     }
 
     @Override
     public void clear() {
-
+        data.clear();
     }
 
     @Override
-    public T get(int index) {
-        return null;
+    public E get(int index) {
+        return data.get(index);
     }
 
     @Override
-    public T set(int index, T element) {
-        return null;
+    public E set(int index, E element) {
+        return data.set(index, element);
     }
 
     @Override
-    public void add(int index, T element) {
-
+    public void add(int index, E element) {
+        data.add(index, element);
     }
 
     @Override
-    public T remove(int index) {
-        return null;
+    public E remove(int index) {
+        return data.remove(index);
     }
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        return data.indexOf(o);
     }
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+        return data.lastIndexOf(o);
     }
 
     @Override
-    public ListIterator<T> listIterator() {
-        return null;
+    public ListIterator<E> listIterator() {
+        return data.listIterator();
     }
 
     @Override
-    public ListIterator<T> listIterator(int index) {
-        return null;
+    public ListIterator<E> listIterator(int index) {
+        return data.listIterator(index);
     }
 
     @Override
-    public List<T> subList(int fromIndex, int toIndex) {
-        return null;
-    }
-
-
-    public void setList(List<T> list) {
-//        this.list = list;
+    public List<E> subList(int fromIndex, int toIndex) {
+        return data.subList(fromIndex, toIndex);
     }
 }
