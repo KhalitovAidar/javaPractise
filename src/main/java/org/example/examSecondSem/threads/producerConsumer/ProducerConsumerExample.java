@@ -34,8 +34,9 @@ public class ProducerConsumerExample {
 
         private void produce(int item) throws InterruptedException {
             synchronized (buffer) {
-
+                System.out.println("Я вернулся");
                 while(buffer.size() == BUFFER_SIZE) {
+                    System.out.println("Продюсер ждёт");
                     buffer.wait();
                 }
 
@@ -47,10 +48,8 @@ public class ProducerConsumerExample {
     }
 
     private static class Consumer implements Runnable {
-
         @Override
         public void run() {
-
             while (true) {
                 try {
                     consume();
@@ -62,7 +61,6 @@ public class ProducerConsumerExample {
         }
 
         private void consume() throws InterruptedException {
-
             synchronized (buffer) {
                 while (buffer.isEmpty()) {
                     buffer.wait();
@@ -75,4 +73,3 @@ public class ProducerConsumerExample {
         }
     }
 }
-

@@ -14,7 +14,6 @@ public class MyList<E> implements List<E> {
         data = new ArrayList<>();
     }
 
-    // Реализация методов интерфейса List
     @Override
     public int size() {
         return data.size();

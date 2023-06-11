@@ -2,9 +2,6 @@ package org.example.myclasses.mycollection;
 
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.LinkedList;
-
-import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class MyCollection<T> implements Collection<T> {
